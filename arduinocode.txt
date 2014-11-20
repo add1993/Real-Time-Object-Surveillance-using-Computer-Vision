@@ -1,0 +1,26 @@
+
+int ledPin=13;
+int matlabData;
+ 
+void setup() 
+{
+  pinMode(ledPin,OUTPUT);
+  Serial.begin(9600);
+}
+ 
+void loop() 
+{
+
+    matlabData=Serial.read(); // read data
+    if(matlabData==1) {  
+      digitalWrite(ledPin,HIGH); // turn light on
+    }
+    else if(matlabData==2) {
+      digitalWrite(ledPin,LOW); // turn light on
+      delay(500);
+      digitalWrite(ledPin,HIGH);
+      delay(500);
+    }
+  
+   
+}
